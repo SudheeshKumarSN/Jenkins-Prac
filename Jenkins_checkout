@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages{
+        stage ("CHECKOUT"){
+            steps{
+            git branch: 'main', url: 'https://github.com/ElevenDevOps/eleven-devops-maven-repo.git'
+            }
+        }
+        stage("BUILD"){
+            steps{
+                sh "echo listing the files..."
+                sh "ls -lrt"
+
+            }
+        }
+        stage("DEPLOY"){
+            steps{
+           sh "echo Happy learning...."
+            }
+        }
+    }
+}
