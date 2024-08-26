@@ -1,5 +1,5 @@
 pipeline{
-    agents any
+    agent any
     environmet{
         URL = 'https://github.com/ElevenDevOps/eleven-devops-maven-repo.git'
         BRANCH = 'main'
