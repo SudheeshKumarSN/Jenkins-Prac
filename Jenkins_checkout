@@ -3,19 +3,25 @@ pipeline{
     stages{
         stage ("CHECKOUT"){
             steps{
-            git branch: 'main', url: 'https://github.com/ElevenDevOps/eleven-devops-maven-repo.git'
+            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ElevenDevOps/eleven-devops-maven-repo.git']])
             }
         }
-        stage("BUILD"){
+        stage("Check files with checkout"){
             steps{
                 sh "echo listing the files..."
                 sh "ls -lrt"
 
             }
         }
-        stage("DEPLOY"){
+        stage("GIT"){
             steps{
-           sh "echo Happy learning...."
+           git branch: 'main', url: 'https://github.com/ElevenDevOps/eleven-devops-maven-repo.git'
+            }
+        }
+        stage("check files with git"){
+            steps{
+                sh "echo listing the files..."
+                sh "ls -lrt"
             }
         }
     }
