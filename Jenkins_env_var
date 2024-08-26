@@ -1,0 +1,21 @@
+pipeline{
+    agents any
+    environmet{
+        URL = 'https://github.com/ElevenDevOps/eleven-devops-maven-repo.git'
+        BRANCH = 'main'
+
+    }
+        stages{
+            stage("SCM"){
+                steps{
+                    git branch: "${env.BRANCH} , ${env.URL}"
+                }
+            }
+            stage("Git Checkout ls"){
+                steps{
+                    sh 'ls -ltr'
+                }
+            }
+        }
+
+}
