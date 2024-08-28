@@ -9,7 +9,7 @@ pipeline{
             steps{
                 git branch: "${params.BRANCH_NAME}" , url: "${env.REPO_URL}"
                 echo "${params.BRANCH_NAME}"
-                ls -lrt
+                sh 'ls -lrt'
             }
         }
     }
