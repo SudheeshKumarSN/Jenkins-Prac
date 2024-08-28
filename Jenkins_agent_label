@@ -1,0 +1,19 @@
+pipeline{
+    agent {
+        label 'slave1'
+    }
+    stages{
+        stage("Checkout"){
+            steps{
+            git branch: 'main', url: 'https://github.com/ElevenDevOps/eleven-devops-maven-repo.git'
+            }
+        }
+        stage("BUILD"){
+            steps{
+                sh 'mvn clean package'
+            
+            }
+        }
+    }
+
+}
