@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    parameters{ string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'The Git branch to build') }
+    parameters{ choice(name: 'BRANCH_NAME', choices: ['main', 'develop'], description: 'The Git branch to build') }
     environment{
         REPO_URL = 'https://github.com/ElevenDevOps/eleven-devops-maven-repo.git'
     }
