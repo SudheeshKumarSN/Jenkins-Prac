@@ -23,7 +23,7 @@ pipeline{
         stage("SCM"){
             steps{
                 git branch: 'main' , url: 'https://github.com/ElevenDevOps/eleven-devops-maven-repo.git'
-                ls -lrt
+                sh 'ls -lrt'
 
             }
         }
