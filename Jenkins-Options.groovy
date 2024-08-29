@@ -19,6 +19,7 @@ pipeline{
         retry(2)
         timestamps()
         buildDiscarder(logRotator(numToKeepStr: '10'))
+        skipDefaultCheckout()
     }
     stages{
         stage("SCM"){
