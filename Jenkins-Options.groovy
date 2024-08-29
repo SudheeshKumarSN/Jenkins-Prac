@@ -17,6 +17,7 @@ pipeline{
     agent any
     options{
         retry(2)
+        timestamp()
     }
     stages{
         stage("SCM"){
