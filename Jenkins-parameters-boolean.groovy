@@ -5,8 +5,8 @@ pipeline{
     }
     stages{
         stage("CHECKOUT"){
-            stages{
-                sh " echo user wants to run this job"
+            steps{
+                sh "echo user wants to run this job"
                 echo "${param.RUN_TEST}"
             }
         }
