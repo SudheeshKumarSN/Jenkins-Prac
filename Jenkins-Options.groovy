@@ -97,6 +97,9 @@ pipeline{
         buildDiscarder(logRotator(numToKeepStr: '10'))
         
     }
+    triggers{
+        cron('* * * * *')
+    }
     stages{
         stage("SCM"){
             options{
